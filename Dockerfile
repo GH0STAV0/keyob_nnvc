@@ -2,8 +2,9 @@ FROM ubuntu:20.04
 RUN apt-get update
 ENV DISPLAY=:1 \
     VNC_PORT=5901 \
-    NO_VNC_PORT=6901
-EXPOSE $VNC_PORT $NO_VNC_PORT
+    NO_VNC_PORT=6901 \
+    SSH_PORT = 22
+
 
 ### Envrionment config
 ENV HOME=/headless \
@@ -31,8 +32,9 @@ RUN mkdir -p ~/.ssh
 RUN rm /etc/ssh/sshd_config
 RUN cp $INST_SCRIPTS/sshd_config /etc/ssh/
 #RUN python --version
-RUN python3 --version
+RUN python3.9 --version
 #COPY requirements.txt .
 #RUN --mount=type=cache,mode=0755,target=/root/.cache pip3 install -r requirements.txt 111
 #COPY . .
+EXPOSE $VNC_PORT $NO_VNC_PORT $SSH_PORT
 CMD ["python", " --version"]
