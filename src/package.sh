@@ -6,7 +6,7 @@ set -u
 echo "Install Package - on  based ubuntu 20.04 LTS"
 
 DEBIAN_FRONTEND=noninteractive apt-get install -y \
-        jq \
+        apt-utils jq \
         nano \
         psmisc \
         sudo \
