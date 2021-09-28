@@ -38,13 +38,21 @@ RUN rm /etc/ssh/sshd_config
 RUN cp $INST_SCRIPTS/sshd_config /etc/ssh/
 ###########################################################################
 
+RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 test 
 
+RUN  echo 'test:test' | chpasswd
+
+RUN service ssh start
+
+EXPOSE $VNC_PORT $NO_VNC_PORT $SSH_PORT
+
+CMD ["/usr/sbin/sshd","-D"]
 #RUN python --version
-RUN python3.9 --version
+#RUN python3.9 --version
 #COPY requirements.txt .
 #RUN --mount=type=cache,mode=0755,target=/root/.cache pip3 install -r requirements.txt 111
 #COPY . .
-EXPOSE $VNC_PORT $NO_VNC_PORT $SSH_PORT
-CMD ["python3", " --version"]
-CMD ["--wait"]
+
+#CMD ["python3", " --version"]
+#CMD ["--wait"]
 
