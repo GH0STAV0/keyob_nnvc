@@ -45,4 +45,6 @@ RUN python3.9 --version
 #RUN --mount=type=cache,mode=0755,target=/root/.cache pip3 install -r requirements.txt 111
 #COPY . .
 EXPOSE $VNC_PORT $NO_VNC_PORT $SSH_PORT
-CMD ["python", " --version"]
+CMD ["python3", " --version"]
+CMD ["--wait"]
+
