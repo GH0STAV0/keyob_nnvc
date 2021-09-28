@@ -23,4 +23,4 @@ apt-get install -y dbus-x11 xauth xinit x11-xserver-utils xdg-utils \
 
 
 echo "Installing  dbus-x11 xauth xinit x11-xserver-utils xdg-utils"
-apt-get install -y dbus-x11 xauth xinit x11-xserver-utils xdg-utils
+#apt-get install -y dbus-x11 xauth xinit x11-xserver-utils xdg-utils
