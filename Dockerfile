@@ -5,7 +5,7 @@ RUN apt-get update
 ENV DISPLAY=:1 \
     VNC_PORT=5901 \
     NO_VNC_PORT=6901 \
-    SSH_PORT = 22
+    SSH_PORT=22
 ###########################################################################
 ENV HOME=/headless \
     TERM=xterm \
