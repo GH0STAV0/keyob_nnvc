@@ -18,20 +18,13 @@ ENV HOME=/headless \
     VNC_VIEW_ONLY=false
 WORKDIR $HOME
 
-RUN apt-get update && apt-get install -y python3.9 python3.9-dev
 
 
 ADD ./src/ $INST_SCRIPTS/
 
 
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
-        jq \
-        nano \
-        psmisc \
-        sudo \
-        tini \
-        wget
+
 
 #COPY requirements.txt .
 #RUN --mount=type=cache,mode=0755,target=/root/.cache pip3 install -r requirements.txt 111
