@@ -3,12 +3,7 @@ FROM ubuntu:20.04
 RUN apt-get update
 
 
-################################## ADD FILES ##################################
 
-ADD ./src/ $INST_SCRIPTS/
-ADD ./addon/ $INST_SCRIPTS/
-RUN find $INST_SCRIPTS -name '*.sh' -exec chmod a+x {} +
-################## Envrionment config ##########################################
 ENV DISPLAY=:1 \
     VNC_PORT=5901 \
     NO_VNC_PORT=6901 \
@@ -25,7 +20,16 @@ ENV HOME=/headless \
     VNC_PW=vncpassword \
     VNC_VIEW_ONLY=false
 ### Envrionment config
+
+
+
 ###########################################################################
+################################## ADD FILES ##################################
+
+ADD ./src/ $INST_SCRIPTS/
+ADD ./addon/ $INST_SCRIPTS/
+RUN find $INST_SCRIPTS -name '*.sh' -exec chmod a+x {} +
+################## Envrionment config ##########################################
 WORKDIR $HOME
 RUN $INST_SCRIPTS/package.sh
 #######################  SSH ###########################################
