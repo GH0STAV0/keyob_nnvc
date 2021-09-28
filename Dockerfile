@@ -29,11 +29,10 @@ RUN $INST_SCRIPTS/package.sh
 
 RUN mkdir -p ~/.ssh
 RUN rm /etc/ssh/sshd_config
-RUN locale-gen en_US.UTF-8
 RUN cp $INST_SCRIPTS/sshd_config /etc/ssh/
 #RUN python --version
 RUN python3 --version
 #COPY requirements.txt .
 #RUN --mount=type=cache,mode=0755,target=/root/.cache pip3 install -r requirements.txt 111
 #COPY . .
-CMD ["python", "--version"]
+CMD ["python", " --version"]
