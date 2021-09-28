@@ -27,7 +27,8 @@ RUN find $INST_SCRIPTS -name '*.sh' -exec chmod a+x {} +
 RUN $INST_SCRIPTS/package.sh
 
 
-
+RUN python --version
+RUN python3 --version
 #COPY requirements.txt .
 #RUN --mount=type=cache,mode=0755,target=/root/.cache pip3 install -r requirements.txt 111
 #COPY . .
