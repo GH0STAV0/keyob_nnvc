@@ -44,6 +44,17 @@ RUN  echo 'test:test' | chpasswd
 
 RUN service ssh start
 
+############################ ADD ROOT PASSWORD ###########################
+RUN ssh-keygen -q -t rsa -N '' -f /id_rsa
+
+RUN echo "root:1" | /usr/sbin/chpasswd
+RUN addgroup uno
+RUN useradd -m -s /bin/bash -g uno uno
+RUN echo "uno:1" | /usr/sbin/chpasswd
+RUN echo "uno    ALL=(ALL) ALL" >> /etc/sudoers
+
+#########################################################################
+
 EXPOSE $VNC_PORT $NO_VNC_PORT $SSH_PORT
 
 CMD ["/usr/sbin/sshd","-D"]
