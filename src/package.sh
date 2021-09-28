@@ -10,3 +10,6 @@ DEBIAN_FRONTEND=noninteractive apt-get install -y \
         sudo \
         tini \
         wget python3.9 python3.9-dev openssh-server locate nano
+
+echo "Installing ttf-wqy-zenhei"
+apt-get install -y ttf-wqy-zenhei software-properties-common
