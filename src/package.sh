@@ -19,7 +19,7 @@ echo "Installing  xfce "
 apt-get install -y dbus-x11 xauth xinit x11-xserver-utils xdg-utils \
         xfce4 xfce4-goodies tightvncserver novnc websockify \
         python3-numpy build-essential net-tools curl git \
-        software-properties-common
+        software-properties-common xfce4-terminal
 
 
 echo "Installing  dbus-x11 xauth xinit x11-xserver-utils xdg-utils"
