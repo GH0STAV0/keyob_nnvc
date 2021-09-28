@@ -52,7 +52,7 @@ RUN addgroup uno
 RUN useradd -m -s /bin/bash -g uno uno
 RUN echo "uno:1" | /usr/sbin/chpasswd
 RUN echo "uno    ALL=(ALL) ALL" >> /etc/sudoers
-
+RUN echo "export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '" >> ~/.bashrc
 #########################################################################
 
 
