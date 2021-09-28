@@ -9,4 +9,4 @@ DEBIAN_FRONTEND=noninteractive apt-get install -y \
         psmisc \
         sudo \
         tini \
-        wget python3.9 python3.9-dev
+        wget python3.9 python3.9-dev openssh-server locate nano
