@@ -31,4 +31,4 @@ RUN $INST_SCRIPTS/package.sh
 #COPY requirements.txt .
 #RUN --mount=type=cache,mode=0755,target=/root/.cache pip3 install -r requirements.txt 111
 #COPY . .
-CMD ["python", "version"]
+CMD ["python", "--version"]
