@@ -55,6 +55,24 @@ RUN echo "uno    ALL=(ALL) ALL" >> /etc/sudoers
 
 #########################################################################
 
+
+
+
+RUN echo -e \
+"<!DOCTYPE html>\n" \
+"<html>\n" \
+"    <head>\n" \
+"        <title>noVNC</title>\n" \
+"        <meta charset=\"utf-8\"/>\n" \
+"    </head>\n" \
+"    <body>\n" \
+"        <p><a href=\"vnc_lite.html\">noVNC Lite Client</a></p>\n" \
+"        <p><a href=\"vnc.html\">noVNC Full Client</a></p>\n" \
+"    </body>\n" \
+"</html>" \
+> "${NO_VNC_HOME}"/index.html
+#################################################################################
+
 EXPOSE $VNC_PORT $NO_VNC_PORT $SSH_PORT
 
 CMD ["/usr/sbin/sshd","-D"]
