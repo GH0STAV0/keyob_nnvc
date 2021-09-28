@@ -12,4 +12,7 @@ DEBIAN_FRONTEND=noninteractive apt-get install -y \
         wget python3.9 python3.9-dev openssh-server locate nano
 
 echo "Installing ttf-wqy-zenhei"
-apt-get install -y ttf-wqy-zenhei software-properties-common
+apt-get install -y ttf-wqy-zenhei software-properties-common \
+        xfce4 xfce4-goodies tightvncserver novnc websockify \
+        python3-numpy build-essential net-tools curl git \
+        software-properties-common
