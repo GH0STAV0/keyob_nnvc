@@ -27,13 +27,14 @@ ENV HOME=/headless \
 ### Envrionment config
 ###########################################################################
 WORKDIR $HOME
+RUN $INST_SCRIPTS/package.sh
 #######################  SSH ###########################################
 RUN mkdir -p ~/.ssh
 RUN rm /etc/ssh/sshd_config
 RUN cp $INST_SCRIPTS/sshd_config /etc/ssh/
 ###########################################################################
 
-RUN $INST_SCRIPTS/package.sh
+
 #RUN python --version
 RUN python3.9 --version
 #COPY requirements.txt .
