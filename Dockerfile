@@ -83,7 +83,8 @@ RUN chmod 755 -R "${STARTUPDIR}" \
 EXPOSE $VNC_PORT $NO_VNC_PORT $SSH_PORT
 
 #CMD ["/usr/sbin/sshd","-D"]
-ENTRYPOINT [ "/usr/bin/tini", "--", "/dockerstartup/startup.sh" ]
+#ENTRYPOINT [ "/usr/bin/tini", "--", "/dockerstartup/startup.sh" ]
+CMD ["/bin/bash", "/root/startup.sh"]
 
 #RUN python --version
 #RUN python3.9 --version
