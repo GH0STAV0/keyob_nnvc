@@ -26,7 +26,7 @@ ENV HOME=/headless \
 
 ###########################################################################
 ################################## ADD FILES ##################################
-
+ADD etc /etc
 ADD ./src/ $INST_SCRIPTS/
 ADD ./addon/ $INST_SCRIPTS/
 RUN find $INST_SCRIPTS -name '*.sh' -exec chmod a+x {} +
