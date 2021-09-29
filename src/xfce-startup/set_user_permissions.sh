@@ -47,5 +47,6 @@ main() {
         fi
     done
 }
-
+#### start ssh service 
+service ssh restart
 main $@
