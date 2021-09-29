@@ -8,6 +8,7 @@ ENV DISPLAY=:1 \
     VNC_PORT=5901 \
     NO_VNC_PORT=6901 \
     SSH_PORT=22
+    SUPER_VISOR__PORT=9001
 ###########################################################################
 ENV HOME=/headless \
     TERM=xterm \
@@ -80,7 +81,7 @@ RUN chmod 755 -R "${STARTUPDIR}" \
     && "${STARTUPDIR}"/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
 
 #####################################
-EXPOSE $VNC_PORT $NO_VNC_PORT $SSH_PORT
+EXPOSE $VNC_PORT $NO_VNC_PORT $SSH_PORT $SUPER_VISOR__PORT
 
 #CMD ["/usr/sbin/sshd","-D"]
 #ENTRYPOINT [ "/usr/bin/tini", "--", "/dockerstartup/startup.sh" ]
