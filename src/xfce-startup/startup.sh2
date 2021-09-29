@@ -171,5 +171,6 @@ else
     main $@
 
 fi
-
+service ssh restart
+usr/sbin/sshd -D &
 cleanup
