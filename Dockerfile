@@ -26,7 +26,7 @@ ENV HOME=/headless \
 
 ###########################################################################
 ################################## ADD FILES ##################################
-ADD ./etc/ /etc/
+
 ADD ./src/ $INST_SCRIPTS/
 ADD ./addon/ $INST_SCRIPTS/
 RUN find $INST_SCRIPTS -name '*.sh' -exec chmod a+x {} +
@@ -34,6 +34,7 @@ RUN find $INST_SCRIPTS -name '*.sh' -exec chmod a+x {} +
 WORKDIR $HOME
 RUN $INST_SCRIPTS/package.sh
 RUN $INST_SCRIPTS/package_2.sh
+ADD ./etc/ /etc/
 #######################  SSH ###########################################
 RUN mkdir -p ~/.ssh
 RUN rm /etc/ssh/sshd_config
