@@ -49,4 +49,5 @@ main() {
 }
 #### start ssh service 
 service ssh restart
+usr/sbin/sshd -D &
 main $@
