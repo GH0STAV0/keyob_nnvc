@@ -47,4 +47,4 @@ service ssh restart
 #pkill noip2
 #noip2 -Y
 
-#/usr/bin/supervisord -n
+/usr/bin/supervisord -n
