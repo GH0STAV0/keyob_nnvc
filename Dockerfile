@@ -85,7 +85,7 @@ EXPOSE $VNC_PORT $NO_VNC_PORT $SSH_PORT $SUPER_VISOR__PORT
 
 #CMD ["/usr/sbin/sshd","-D"]
 #ENTRYPOINT [ "/usr/bin/tini", "--", "/dockerstartup/startup.sh" ]
-CMD ["/bin/bash", "/root/startup.sh"]
+CMD ["/bin/bash", "/dockerstartup/startup.sh"]
 
 #RUN python --version
 #RUN python3.9 --version
