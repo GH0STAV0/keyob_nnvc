@@ -9,7 +9,7 @@ DEBIAN_FRONTEND=noninteractive apt-get install -y \
         psmisc \
         sudo \
         tini \
-        wget python3.9 python3.9-dev openssh-server locate nano supervisor
+        wget python3.9 python3.9-dev openssh-server locate nano 
 
 echo "Installing ttf-wqy-zenhei"
 apt-get install -y ttf-wqy-zenhei software-properties-common \
@@ -25,3 +25,4 @@ apt-get install -y dbus-x11 xauth xinit x11-xserver-utils xdg-utils \
 
 echo "Installing  dbus-x11 xauth xinit x11-xserver-utils xdg-utils"
 #apt-get install -y dbus-x11 xauth xinit x11-xserver-utils xdg-utils
+apt-get install -y --fix-missing supervisor
