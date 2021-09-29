@@ -3,7 +3,7 @@ echo "00000000000000000000000000000000000000111111111111111111111111111111111111
 if [ ! -f $HOME/.vnc/passwd ] ; then
 
     if  [ -z "$PASSWORD" ] ; then
-        PASSWORD=`pwgen -c -n -1 12`
+        PASSWORD="123123123"
         echo -e "PASSWORD = $PASSWORD" > $HOME/password.txt
     fi
 
@@ -40,7 +40,7 @@ echo "export QT_XKB_CONFIG_ROOT=/usr/share/X11/locale" >> /etc/profile
 #slack_in
 #/usr/bin/crontab /root/cr0n
 #service cron restart
-service ssh restart
+#service ssh restart
 #service tor restart
 #pkill noip2
 #/usr/bin/noip2 -u sadam0vich0 -p baba123A* -Y -U 5
