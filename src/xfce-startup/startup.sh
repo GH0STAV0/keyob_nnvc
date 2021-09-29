@@ -29,7 +29,7 @@ else
     fi
 
 fi
-uuidgen > /etc/machine-id
+#uuidgen > /etc/machine-id
 #service cron restart
 
 # set keyboard for all sh users
