@@ -18,10 +18,10 @@ if [ ! -f $HOME/.vnc/passwd ] ; then
         echo -e "PASSWORD = $PASSWORD" > $HOME/password.txt
     fi
 
-    echo "$USER:$PASSWORD" | chpasswd
+    #echo "$USER:$PASSWORD" | chpasswd
 
     # Set up vncserver
-    su $USER -c "mkdir $HOME/.vnc && echo '$PASSWORD' | vncpasswd -f > $HOME/.vnc/passwd && chmod 600 $HOME/.vnc/passwd && touch $HOME/.Xresources"
+    su $USER -c "mkdir -p $HOME/.vnc && echo '$PASSWORD' | vncpasswd -f > $HOME/.vnc/passwd && chmod 600 $HOME/.vnc/passwd && touch $HOME/.Xresources"
     chown -R $USER:$USER $HOME
 
     if [ ! -z "$SUDO" ]; then
