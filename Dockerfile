@@ -72,7 +72,14 @@ RUN echo -e \
 "</html>" \
 > "${NO_VNC_HOME}"/index.html
 #################################################################################
+COPY ./src/xfce-startup "${STARTUPDIR}"/
+COPY ./xfce/src/home/config "${HOME}"/.config/
+COPY ./xfce/src/home/Desktop "${HOME}"/Desktop/
+COPY ./xfce/src/home/readme*.md "${HOME}"/
+RUN chmod 755 -R "${STARTUPDIR}" \
+    && "${STARTUPDIR}"/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
 
+#####################################
 EXPOSE $VNC_PORT $NO_VNC_PORT $SSH_PORT
 
 CMD ["/usr/sbin/sshd","-D"]
