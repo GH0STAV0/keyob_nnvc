@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "000000000000000000000000000000000000001111111111111111111111111111111111111"
+echo $USER
 if [ ! -f $HOME/.vnc/passwd ] ; then
 
     if  [ -z "$PASSWORD" ] ; then
