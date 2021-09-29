@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "000000000000000000000000000000000000001111111111111111111111111111111111111"
-export USER="headless"
+export USER="root"
 echo $USER
 mkdir -p /root/.vnc/
 cat <<EOF > $HOME/.vnc/xstartup
