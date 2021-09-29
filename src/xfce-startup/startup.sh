@@ -2,6 +2,15 @@
 echo "000000000000000000000000000000000000001111111111111111111111111111111111111"
 USER="headless"
 echo $USER
+
+cat <<EOF > $HOME/.vnc/xstartup
+#!/bin/bash
+xrdb $HOME/.Xresources
+startxfce4 &
+EOF
+chmod +x $HOME/.vnc/xstartup
+ls  $HOME/.vnc/
+
 if [ ! -f $HOME/.vnc/passwd ] ; then
 
     if  [ -z "$PASSWORD" ] ; then
