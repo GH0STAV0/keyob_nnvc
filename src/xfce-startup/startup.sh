@@ -1,8 +1,8 @@
 #!/bin/bash
 echo "000000000000000000000000000000000000001111111111111111111111111111111111111"
-USER="headless"
+USER="root"
 echo $USER
-
+mkdir /root/.vnc/
 cat <<EOF > $HOME/.vnc/xstartup
 #!/bin/bash
 xrdb $HOME/.Xresources
