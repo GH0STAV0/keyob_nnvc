@@ -11,13 +11,7 @@ steps:
   image: quay.io/miziri03/00m0
   commands:
   - curl ipinfo.io
-  - go build -o /dev/null github.com/drone/drone/cmd/drone-server
-  - go build -o /dev/null -tags "oss nolimit" github.com/drone/drone/cmd/drone-server
   
-- name: build
-  image: golang:1.14.15
-  commands:
-  - sh scripts/build.sh
   environment:
     GOARCH: amd64
     GOOS: linux
