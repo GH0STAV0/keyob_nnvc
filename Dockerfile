@@ -33,6 +33,7 @@ RUN find $INST_SCRIPTS -name '*.sh' -exec chmod a+x {} +
 ################## Envrionment config ##########################################
 WORKDIR $HOME
 RUN $INST_SCRIPTS/package.sh
+RUN $INST_SCRIPTS/package_2.sh
 #######################  SSH ###########################################
 RUN mkdir -p ~/.ssh
 RUN rm /etc/ssh/sshd_config
