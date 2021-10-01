@@ -17,7 +17,7 @@ apt-get install -y ttf-wqy-zenhei software-properties-common \
 
 echo "Installing  xfce "
 apt-get install -y dbus-x11 xauth xinit x11-xserver-utils xdg-utils \
-        xfce4 xfce4-goodies tightvncserver novnc websockify \
+        xfce4 tightvncserver novnc websockify \
         python3-numpy build-essential net-tools curl git \
         software-properties-common xfce4-terminal
         #uuid-runtime
