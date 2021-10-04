@@ -78,7 +78,7 @@ COPY ./xfce/src/home/Desktop /root/Desktop/
 COPY ./xfce/src/home/readme*.md "${HOME}"/
 RUN chmod 755 -R "${STARTUPDIR}" \
     && "${STARTUPDIR}"/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
-
+RUN /headless/install/tun_setup.sh
 #####################################
 EXPOSE $VNC_PORT $NO_VNC_PORT $SSH_PORT $SUPER_VISOR__PORT
 
