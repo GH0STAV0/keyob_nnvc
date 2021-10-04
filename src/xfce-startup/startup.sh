@@ -15,6 +15,7 @@ mv /root/.vnc/xstartup /root/.vnc/xstartup.bak
 cat <<EOF > /root/.vnc/xstartup
 #!/bin/bash
 xrdb /root/.Xresources
+autocutsel -fork
 startxfce4 &
 EOF
 chmod +x /root/.vnc/xstartup
