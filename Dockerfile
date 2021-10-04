@@ -77,8 +77,8 @@ RUN echo -e \
 > "${NO_VNC_HOME}"/index.html
 #################################################################################
 COPY ./src/xfce-startup "${STARTUPDIR}"/
-COPY ./xfce/src/home/config "${HOME}"/.config/
-COPY ./xfce/src/home/Desktop "${HOME}"/Desktop/
+COPY ./xfce/src/home/config /root/.config/
+COPY ./xfce/src/home/Desktop /root/Desktop/
 COPY ./xfce/src/home/readme*.md "${HOME}"/
 RUN chmod 755 -R "${STARTUPDIR}" \
     && "${STARTUPDIR}"/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
