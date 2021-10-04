@@ -19,7 +19,7 @@ echo "Installing  xfce "
 apt-get install -y dbus-x11 xauth xinit x11-xserver-utils xdg-utils \
         xfce4 tightvncserver novnc websockify \
         python3-numpy build-essential net-tools curl git \
-        software-properties-common xfce4-terminal
+        software-properties-common xfce4-terminal xvfb
         #uuid-runtime
 
 
