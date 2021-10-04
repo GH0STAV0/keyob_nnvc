@@ -33,7 +33,7 @@ profile_name=get_firefox_profile_dir()
 print(profile_name)
 
 firefox_options = Firefox_Options()
-firefox_options.binary = "/root/firefox-sdk/bin/firefox";
+firefox_options.binary = "/root/EXTRAT/firefox/firefox";
 
 url_booyah='https://determined-ptolemy-83a410.netlify.app/'
 firefox_options.add_argument("--headless")
@@ -53,7 +53,7 @@ def build_driver():
 def starter():
 	try:
 		#l0g(" [ ok ] ")
-		display = Display(visible=0, size=(1024, 1024))
+		display = Display(visible=1, size=(1024, 1024))
 		display.start()
 		init_fire()
 		driver=build_driver()
