@@ -3,6 +3,8 @@
 ### every exit != 0 fails the script
 set -e
 export NO_VNC_HOME=/usr/libexec/noVNCdim
+whoami
+
 mkdir -p /root/EXTRAT/
 echo "Install Package - on  based ubuntu 20.04 LTS"
 echo "Installing  dbus-x11 xauth xinit x11-xserver-utils xdg-utils"
