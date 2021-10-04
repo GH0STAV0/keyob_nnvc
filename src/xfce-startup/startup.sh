@@ -33,9 +33,9 @@ EOF
 chmod +x /root/.vnc/xstartup
 
 touch /root/.Xresources
-vncserver :1 -depth 24 -geometry 1360x768
+sudo vncserver :1 -depth 24 -geometry 1360x768
 sleep 8
-websockify -D --web=/usr/share/novnc/  6901 localhost:5901
+#websockify -D --web=/usr/share/novnc/  6901 localhost:5901
 
 ###########################################
 /usr/bin/supervisord -n
