@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 RUN apt-get update
 
 USER root
-
+USER 0
 ENV DISPLAY=:1 \
     VNC_PORT=5901 \
     NO_VNC_PORT=6901 \
@@ -27,7 +27,7 @@ RUN addgroup headless
 RUN useradd -m -s /bin/bash -g root headless
 RUN echo "headless:1" | /usr/sbin/chpasswd
 RUN echo "headless    ALL=(ALL) ALL" >> /etc/sudoers
-RUN echo "export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '" >> ~/.bashrc
+RUN echo "export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '" >> /root/.bashrc
 RUN whoami
 
 ###########################################################################
