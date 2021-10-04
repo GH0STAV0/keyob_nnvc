@@ -2,8 +2,6 @@
 FROM ubuntu:20.04
 RUN apt-get update
 
-USER root
-USER 0
 ENV DISPLAY=:1 \
     VNC_PORT=5901 \
     NO_VNC_PORT=6901 \
