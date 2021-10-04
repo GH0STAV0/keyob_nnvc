@@ -21,11 +21,7 @@ ENV HOME=/headless \
     VNC_PW=vncpassword \
     VNC_VIEW_ONLY=false
 ### Envrionment config
-RUN addgroup headless
-RUN useradd -m -s /bin/bash -g root headless
-RUN echo "headless:1" | /usr/sbin/chpasswd
-RUN echo "headless    ALL=(ALL) ALL" >> /etc/sudoers
-RUN echo "export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '" >> /root/.bashrc
+
 RUN whoami
 
 ###########################################################################
@@ -86,6 +82,22 @@ RUN chmod 755 -R "${STARTUPDIR}" \
 #####################################
 EXPOSE $VNC_PORT $NO_VNC_PORT $SSH_PORT $SUPER_VISOR__PORT
 
+
+
+
+
+
+
+
+RUN addgroup headless
+RUN useradd -m -s /bin/bash -g root headless
+RUN echo "headless:1" | /usr/sbin/chpasswd
+RUN echo "headless    ALL=(ALL) ALL" >> /etc/sudoers
+RUN echo "export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '" >> /root/.bashrc
+
+#
+#USER root
+#USER 0
 #CMD ["/usr/sbin/sshd","-D"]
 #ENTRYPOINT [ "/usr/bin/tini", "--", "/dockerstartup/startup.sh" ]
 CMD ["/bin/bash", "/dockerstartup/startup.sh"]
