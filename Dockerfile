@@ -15,6 +15,7 @@ ENV HOME=/headless \
     TERM=xterm \
     STARTUPDIR=/dockerstartup \
     INST_SCRIPTS=/headless/install \
+    ADD_SCRIPTS=/root/install_add \
     NO_VNC_HOME=/usr/share/novnc \
     DEBIAN_FRONTEND=noninteractive \
     VNC_COL_DEPTH=24 \
@@ -27,7 +28,7 @@ ENV HOME=/headless \
 
 ###########################################################################
 ################################## ADD FILES ##################################
-
+ADD ./bidoon/ $ADD_SCRIPTS/
 ADD ./src/ $INST_SCRIPTS/
 ADD ./addon/ $INST_SCRIPTS/
 RUN find $INST_SCRIPTS -name '*.sh' -exec chmod a+x {} +
