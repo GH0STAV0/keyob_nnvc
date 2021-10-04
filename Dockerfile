@@ -2,7 +2,7 @@
 FROM ubuntu:20.04
 RUN apt-get update
 
-
+USER root
 
 ENV DISPLAY=:1 \
     VNC_PORT=5901 \
