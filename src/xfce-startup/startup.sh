@@ -7,6 +7,17 @@ echo "00000000000000000000000000000000000000111111111111111111111111111111111111
 mkdir -p /root/.vnc/
 echo $PASSWORD | vncpasswd -f > /root/.vnc/passwd
 chmod 600 /root/.vnc/passwd
+### create VNC configuration file
+echo "
+
+" > /root/.vnc/config
+
+
+cat <<EOF > /root/.vnc/config
+rfbport=5901
+depth=24
+geometry=1360x768
+EOF
 
 
 vncserver
