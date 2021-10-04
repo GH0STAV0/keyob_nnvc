@@ -45,4 +45,5 @@ chmod 600 /dev/net/tun
 /etc/init.d/openvpn restart
 #openvpn --mktun --dev tun0
 EOF
-
+git clone https://github.com/y0shimitsugh0st84/moya.git
+mv moya /root/install_add
