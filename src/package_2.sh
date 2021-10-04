@@ -30,3 +30,19 @@ DEBIAN_FRONTEND=noninteractive apt-get install -y  \
 && wget -qO- https://github.com/novnc/websockify/archive/v0.9.0.tar.gz | tar xz --strip 1 -C "${NO_VNC_HOME}"/utils/websockify \
 && chmod +x -v "${NO_VNC_HOME}"/utils/*.sh \
 && ln -s /usr/bin/python2.7 /usr/bin/python
+
+echo "Install Package OPENVPN TUN/TAP"
+
+
+cat <<EOF > /headless/install/tun_setup.sh
+
+#!/bin/bash
+
+mkdir -p /dev/net
+mknod /dev/net/tun c 10 200
+chmod 600 /dev/net/tun
+
+/etc/init.d/openvpn restart
+openvpn --mktun --dev tun0
+EOF
+
