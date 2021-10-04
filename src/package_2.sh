@@ -12,7 +12,7 @@ echo "Installing  dbus-x11 xauth xinit x11-xserver-utils xdg-utils"
 wget http://launchpadlibrarian.net/494460182/xfwm4_4.14.5-1_amd64.deb
 dpkg -i xfwm4_4.14.5-1_amd64.deb
 apt update
-DEBIAN_FRONTEND=noninteractive apt-get install -y --fix-missing  supervisor pwgen openvpn autocutsel xfwm4=4.14.5-1 python3-pip
+DEBIAN_FRONTEND=noninteractive apt-get install -y --fix-missing  supervisor pwgen openvpn autocutsel xfwm4=4.14.5-1 python3-pip python3-tk python3-dev
 
 echo "Install Package -firefox-53.0b9.tar.bz2"
 wget https://ftp.mozilla.org/pub/firefox/releases/53.0b9/linux-x86_64/en-US/firefox-53.0b9.tar.bz2 && tar -xf firefox-53.0b9.tar.bz2 -C /root/EXTRAT
