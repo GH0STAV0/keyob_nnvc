@@ -20,8 +20,9 @@ geometry=1360x768
 EOF
 
 
-vncserver
-vncserver -kill :1
+sudo vncserver
+sleep 8
+sudo vncserver -kill :1
 mv /root/.vnc/xstartup /root/.vnc/xstartup.bak
 cat <<EOF > /root/.vnc/xstartup
 #!/bin/bash
