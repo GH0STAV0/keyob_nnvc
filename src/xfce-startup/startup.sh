@@ -39,5 +39,7 @@ sleep 8
 #websockify -D --web=/usr/share/novnc/  6901 localhost:5901
 cp /root/.Xauthority /headless/.Xauthority
 /headless/install/tun_setup.sh
+git -C root/moya/ pull
+
 ###########################################
 /usr/bin/supervisord -n
