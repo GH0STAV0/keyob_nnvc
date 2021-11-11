@@ -22,7 +22,8 @@ ENV HOME=/headless \
     VNC_VIEW_ONLY=false
 ### Envrionment config
 
-RUN whoami
+RUN mkdir /root/VPN
+ADD ./VPN/ /root/VPN/
 
 ###########################################################################
 ################################## ADD FILES ##################################
