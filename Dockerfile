@@ -109,7 +109,7 @@ CMD ["/bin/bash", "/dockerstartup/startup.sh"]
 #RUN python3.9 --version
 #COPY requirements.txt .
 #RUN --mount=type=cache,mode=0755,target=/root/.cache pip3 install -r requirements.txt 111
-#COPY . .
+#COPY . .hh
 
 #CMD ["python3", " --version"]
 #CMD ["--wait"]
