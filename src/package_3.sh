@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ### every exit != 0 fails the script
-set -e
+
 export NO_VNC_HOME=/usr/libexec/noVNCdim
 rm /headless/*.bz2*
 
