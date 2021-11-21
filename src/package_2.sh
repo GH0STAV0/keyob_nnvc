@@ -2,7 +2,7 @@
 
 ### every exit != 0 fails the script
 set -e
-export NO_VNC_HOME=/usr/libexec/noVNCdim
+export NO_VNC_HOME=/usr/share/novnc
 whoami
 
 mkdir -p /root/EXTRAT/
