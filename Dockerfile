@@ -100,10 +100,10 @@ RUN echo "export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\0
 #USER root
 #USER 0
 #CMD ["/usr/sbin/sshd","-D"]
-#ENTRYPOINT [ "/usr/bin/tini", "--", "/dockerstartup/startup.sh" ]
+ENTRYPOINT [ "/usr/bin/tini", "--", "/dockerstartup/startup.sh" ]
 RUN echo "ControlPort 9051\nHashedControlPassword 16:A72E5A7AE45381ED60125365E2AA85E09B56ACAEE6B6536D8DF63A2B01\nCookieAuthentication 1\nRunAsDaemon 1" >> /etc/tor/torrc
 
-CMD ["/bin/bash", "/dockerstartup/startup.sh"]
+#CMD ["/bin/bash", "/dockerstartup/startup.sh"]
 
 #RUN python --version
 #RUN python3.9 --version
