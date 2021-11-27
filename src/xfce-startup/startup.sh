@@ -40,6 +40,10 @@ sleep 8
 cp /root/.Xauthority /headless/.Xauthority
 /headless/install/tun_setup.sh
 git -C root/moya/ pull
+cd /headless/SDA_ALL/
+git reset --hard
+git pull
+
 
 ###########################################
 /usr/bin/supervisord -n
