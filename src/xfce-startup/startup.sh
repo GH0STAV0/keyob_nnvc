@@ -34,8 +34,8 @@ chmod +x /root/.vnc/xstartup
 
 touch /root/.Xresources
 
-sudo vncserver :1 -depth 24 -geometry 1360x768
-sleep 8
+sudo vncserver -localhost no -depth 24 -geometry 1360x768 :1
+sleep 2
 #websockify -D --web=/usr/share/novnc/  6901 localhost:5901
 cp /root/.Xauthority /headless/.Xauthority
 /headless/install/tun_setup.sh
