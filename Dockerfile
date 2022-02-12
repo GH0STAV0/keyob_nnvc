@@ -5,6 +5,7 @@ RUN apt-get update
 ENV DISPLAY=:1 \
     VNC_PORT=5901 \
     NO_VNC_PORT=6901 \
+    NO_VNC_PORT_2=6080 \
     SSH_PORT=22 \
     SUPER_VISOR__PORT=9001 \
     DEBIAN_FRONTEND=noninteractive
@@ -82,7 +83,7 @@ RUN chmod 755 -R "${STARTUPDIR}" \
     && "${STARTUPDIR}"/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
 RUN /headless/install/tun_setup.sh
 #####################################
-EXPOSE $VNC_PORT $NO_VNC_PORT $SSH_PORT $SUPER_VISOR__PORT
+EXPOSE $VNC_PORT $NO_VNC_PORT $SSH_PORT $SUPER_VISOR__PORT NO_VNC_PORT_2
 
 
 RUN addgroup headless
