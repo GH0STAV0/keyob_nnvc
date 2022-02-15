@@ -1,5 +1,7 @@
 
 #!/bin/bash
+echo $(hostname -I | cut -d\  -f1) $(hostname) | sudo tee -a /etc/hosts
+
 export USER="root"
 export PASSWORD="123123123"
 echo "000000000000000000000000000000000000001111111111111111111111111111111111111"
